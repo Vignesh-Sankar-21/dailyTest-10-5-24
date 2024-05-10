@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(216, 208, 208);
+        }
+        .cover{
+            height: 190px;
+            width: 470px;
+            background-color: white;
+            margin-left: 480px;
+            margin-top: 250px;
+            box-shadow: black;
+        }
+        #in1{
+            width: 400px;
+            height: 30px;
+            margin-left: 30px;
+        }
+        h1{
+            margin-left: 30px;
+            padding-top: 30px;
+        }
+        .color{
+            display: flex;
+        }
+        .red{
+           
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+        .orange{
+
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        .green{
+
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        #para{
+            margin-left: 120px;
+        }
+    </style>
+    <div class="cover">
+        <h1>Password strength indicator</h1>
+        <input placeholder="Type Password" id="in1" oninput="check();check1();check2()">
+        <div class="color">
+            <div class="red" id="div1"></div>
+            <div class="orange" id="div2"></div>
+            <div class="green" id="div3"></div>
+        </div>
+        <p id="para"></p>
+
+
+
+    </div>
+    <script>
+        var in1=document.getElementById("in1").value
+        var in2=document.getElementById("in2")
+
+        function check(){
+            if(in1.length<5){
+                var div1=document.getElementById("div1")
+                var div2=document.getElementById("div2")
+                var div3=document.getElementById("div3")
+                var para=document.getElementById("para")
+                div1.style.height="8px"
+                div1.style.width="120px"
+                div1.style.backgroundColor="red"
+                div1.style.borderRadius="5px"
+                div2.style.height="8px"
+                div2.style.width="120px"
+                div2.style.backgroundColor="grey"
+                div2.style.borderRadius="5px"
+                div3.style.height="8px"
+                div3.style.width="120px"
+                div3.style.backgroundColor="grey"
+                div3.style.borderRadius="5px"
+                para.innerHTML="<b>Your password is too weak</b>"
+                para.style.color="red"
+                in2.textContent="Show"
+                in2.style.backgroundColor="black"
+            }}
+        function check1(){
+            if(in1.length>4){
+                div1.style.height="8px"
+                div1.style.width="120px"
+                div1.style.backgroundColor="red"
+                div1.style.borderRadius="5px"
+                div2.style.height="8px"
+                div2.style.width="120px"
+                div2.style.backgroundColor="orange"
+                div2.style.borderRadius="5px"
+                div3.style.height="8px"
+                div3.style.width="120px"
+                div3.style.backgroundColor="grey"
+                div3.style.borderRadius="5px"
+
+            }
+        }
+        function check2(){
+            if(in1.length>8){
+                div1.style.height="8px"
+                div1.style.width="120px"
+                div1.style.backgroundColor="red"
+                div1.style.borderRadius="5px"
+                div2.style.height="8px"
+                div2.style.width="120px"
+                div2.style.backgroundColor="orange"
+                div2.style.borderRadius="5px"
+                div3.style.height="8px"
+                div3.style.width="120px"
+                div3.style.backgroundColor="grey"
+                div3.style.borderRadius="5px"
+
+            }
+        }
+        
+            
+            
+
+        
+
+    </script>
+    
+</body>
+</html>
